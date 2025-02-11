@@ -1,8 +1,10 @@
-#ifndef datatypes.h
-
-#define datatypes.h
-
 #include <stdbool.h>
+
+typedef struct
+{
+	int day, month, year;
+
+} Date;
 
 
 typedef struct
@@ -14,12 +16,12 @@ typedef struct
 	char name[25];
 		
 	bool gender;
+	
+	Date dateOfBirth;
 		
 	char phone[20];
 		
 	char email[30];
-		
-	char password[20];
 	
 } Student;
 	
@@ -32,19 +34,36 @@ typedef struct
 		
 	char class_name[10];
 	
+	Student students[];
+	
 } Class;
 
 
 typedef struct
 {
-	int day;
+	char teacher_id[10];
 	
-	int month;
+	char classroom_id[10];
 	
-	int year;
+	char name[20];
+	
+	Date dateOfBirth;
+	
+	bool gender;
+	
+	char email[30];
+	
+	char phone[20];
+	
+	Class classes[];
 
-} Date;
+} Teacher;
 
 
+typedef struct
+{
+	char userName[30];
+	
+	char password[10];
 
-#endif
+} Admin;

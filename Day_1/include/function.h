@@ -1,23 +1,27 @@
 #include "datatypes.h"
 
-#ifndef function.h
-
-#define function.h
-
 
 void showMainMenu();
 
 void adminMenu();
 
+void loginMenu();
+
+void checkAccountAdmin();
+
+void saveAccountAdmin();
+
+void getPassword(char *password, int maxLength);
+
 void showStudentMenu();
 
 void exit();
 
+void goBackOrExit();
+
 void endProgram();
 
-void showStatisticsTable(const Student students[], int studentCount, Class classes[], int classCount, int countMajors);
-
-void addStudent(Student students[], int *studentCount);
+void addStudent(Student students[], int *studentCount, char id0[]);
 
 void displayListStudents(const Student students[], int studentCount);
 
@@ -29,11 +33,8 @@ void displayListStudents(const Student students[], int studentCount);
 
 void manageStudents(Student students[], int *studentCount);
 
-void moreDetailInformation(Student students[], int id);
+//void moreDetailInformation(Student students[], int id);
 
-void writeTextFile(Class classes[], int classCount);
+//void writeTextFile(Class classes[], int classCount);
 
-void readTextFile();
-
-
-#endif
+//void readTextFile();
