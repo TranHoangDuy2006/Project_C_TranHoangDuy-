@@ -4,13 +4,13 @@
 
 #include "function.h"
 
-#include "datatypes.h"
-
 #include <windows.h>
 
 #define MAX_STUDENTS 50
 
 #define MAX_CLASSES 20
+
+//#define MAX_ACCOUNT 1
 
 #define b break
 
@@ -31,7 +31,9 @@ int main(int argc, char *argv[])
 	
 	Class classes[MAX_CLASSES];
 	
-	int studentCount = 0, classCount = 0, countMajors = 0;
+	//Admin admin[MAX_ACCOUNT];
+	
+	int studentCount = 0, classCount = 0;
 	
 	do
 		{						
@@ -39,7 +41,7 @@ int main(int argc, char *argv[])
 			
 			showMainMenu();
 	
-			printf("\n\t\t\t\t\t\t-> Enter The Choice: ");
+			printf("\n\t\t\t\t\t\t-> Enter your choice: ");
 	
 			scanf("%d", &yourChoice0);
 	
@@ -49,19 +51,29 @@ int main(int argc, char *argv[])
 						{
 							c;
 							
+							printf("\n\t\t\t\t\t\t\tExit program!\n");
+							
 							endProgram();
 							
 							n;
 							
-							p;
+							p;							
 							
-							b;							
-							
-							exit(1);
+							exit(0);
 						}
 						
 					case 1:
 						{
+							c;
+							
+							loginMenu();
+							
+							saveAccountAdmin();
+							
+							c;
+							
+							checkAccountAdmin();
+							
 							c;
 							
 							adminMenu();
@@ -92,7 +104,7 @@ int main(int argc, char *argv[])
 						{
 							c;
 							
-							showStatisticsTable(students, studentCount, classes, classCount, countMajors);
+							
 							
 							n;
 							
@@ -103,7 +115,7 @@ int main(int argc, char *argv[])
 						{
 							c;
 							
-							printf("\n\n\t\t\t\t\t\tLua chon khong hop le!");
+							printf("\n\n\t\t\t\t\t\tError: Invalid choice, try again!");
 							
 							n;
 							
