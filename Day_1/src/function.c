@@ -1011,15 +1011,15 @@ void manageStudents(Student students[], int *studentCount)
 											
 											printf("\n\t\t\t\t\t\t-----------------------------");
 											
-											printf("\n\t\t\t\t\t\tID: %s", students[found4].student_id);
+											printf("\n\t\t\t\t\t\tID: %s", students[found2].student_id);
 											
-											printf("\n\t\t\t\t\t\tName: %s", students[found4].name);
+											printf("\n\t\t\t\t\t\tName: %s", students[found2].name);
 											
-											printf("\n\t\t\t\t\t\tEmail: %s", students[found4].email);
+											printf("\n\t\t\t\t\t\tEmail: %s", students[found2].email);
 											
-											printf("\n\t\t\t\t\t\tPhone: %s", students[found4].phone);
+											printf("\n\t\t\t\t\t\tPhone: %s", students[found2].phone);
 											
-											printf("\n\t\t\t\t\t\tGender: %s", (students[found4].gender == 0) ? "Nam" : "Nu");
+											printf("\n\t\t\t\t\t\tGender: %s", (students[found2].gender == 0) ? "Nam" : "Nu");
 											
 											printf("\n\t\t\t\t\t\t");
 											
