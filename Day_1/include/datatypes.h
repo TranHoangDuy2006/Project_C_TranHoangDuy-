@@ -9,7 +9,7 @@ typedef struct
 
 typedef struct
 {
-	char student_id[10];
+	char student_id[10]; // Nine characters including the Null character
 	
 	char classroom_id[10];
 		
@@ -17,7 +17,7 @@ typedef struct
 		
 	bool gender;
 	
-	Date dateOfBirth;
+//  Date dateOfBirth;
 		
 	char phone[20];
 		
@@ -47,7 +47,7 @@ typedef struct
 	
 	char name[20];
 	
-	Date dateOfBirth;
+//	Date dateOfBirth;
 	
 	bool gender;
 	

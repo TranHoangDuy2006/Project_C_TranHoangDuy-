@@ -21,6 +21,8 @@ void goBackOrExit();
 
 void endProgram();
 
+void checkStringLength(const char *str, int maxLength);
+
 void addStudent(Student students[], int *studentCount, char id0[]);
 
 void displayListStudents(const Student students[], int studentCount);
@@ -38,3 +40,5 @@ void manageStudents(Student students[], int *studentCount);
 //void writeTextFile(Class classes[], int classCount);
 
 //void readTextFile();
+
+
