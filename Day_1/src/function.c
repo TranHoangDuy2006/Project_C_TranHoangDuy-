@@ -466,31 +466,37 @@ void addStudent(Student students[], int *studentCount, char id0[])
 		scanf("%d", &tempGender);
     } 
 	
-	while (tempGender != 0 && tempGender != 1);
+	while(tempGender != 0 && tempGender != 1);
     
 	newStudent.gender = tempGender;
 
-    for (int i = 0; i < *studentCount; i++)
+    for(int i = 0; i < *studentCount; i++)
     {
-        if (strcmp(students[i].name, newStudent.name) == 0)
+        if(strcmp(students[i].name, newStudent.name) == 0)
         {
-            printf("\n\t\t\t\t\t\tError: Name '%s' already exists!\n", newStudent.name);
+            c;
+			
+			printf("\n\t\t\t\t\t\tError: Name '%s' already exists!\n", newStudent.name);
         	
-			return;
+			exit(1);
         }
 
-        if (strcmp(students[i].phone, newStudent.phone) == 0)
+        if(strcmp(students[i].phone, newStudent.phone) == 0)
         {
-            printf("\n\t\t\t\t\t\tError: Phone number '%s' already exists!\n", newStudent.phone);
+            c;
+			
+			printf("\n\t\t\t\t\t\tError: Phone number '%s' already exists!\n", newStudent.phone);
             
-			return;
+			exit(1);
         }
 
-        if (strcmp(students[i].email, newStudent.email) == 0)
+        if(strcmp(students[i].email, newStudent.email) == 0)
         {
-            printf("\n\t\t\t\t\t\tError: Email '%s' already exists!\n", newStudent.email);
+            c;
+			
+			printf("\n\t\t\t\t\t\tError: Email '%s' already exists!\n", newStudent.email);
             
-			return;
+			exit(1);
         }
     }
 
@@ -502,7 +508,6 @@ void addStudent(Student students[], int *studentCount, char id0[])
 
 	
 	
-
 void displayListStudents(Student students[], int studentCount)
 {		
 	c;
@@ -530,7 +535,7 @@ void searchStudentsByName(Student students[], int studentCount, const char* name
 {
     int found = 0;
 
-    printf("\n\t\t\t\t\t\t\t\t\t\t\t\t* List of students name '%s': *", name);
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t\t* List of students have name '%s': *", name);
   
     printf("\n\n\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+\n");
     
@@ -1002,6 +1007,26 @@ void manageStudents(Student students[], int *studentCount)
 											
 											c;
 											
+											printf("\n\n\t\t\t\t\t\tStudent informations: ");
+											
+											printf("\n\t\t\t\t\t\t-----------------------------");
+											
+											printf("\n\t\t\t\t\t\tID: %s", students[found4].student_id);
+											
+											printf("\n\t\t\t\t\t\tName: %s", students[found4].name);
+											
+											printf("\n\t\t\t\t\t\tEmail: %s", students[found4].email);
+											
+											printf("\n\t\t\t\t\t\tPhone: %s", students[found4].phone);
+											
+											printf("\n\t\t\t\t\t\tGender: %s", (students[found4].gender == 0) ? "Nam" : "Nu");
+											
+											printf("\n\t\t\t\t\t\t");
+											
+											p;
+											
+											c;
+											
 											printf("\n\t\t\t\t\t\t-> Enter new student code: ");
 											
 											f;
@@ -1117,30 +1142,30 @@ void manageStudents(Student students[], int *studentCount)
 											s;
 											
 											printf("\n\t\t\t\t\t\tStudent found!");
-											
+																																
 											s;
 											
-											c;
+											c;																				
 											
 											printf("\n\n\t\t\t\t\t\tStudent informations: ");
 											
-											printf("\n\n\t\t\t\t\t\t-----------------------------");
+											printf("\n\t\t\t\t\t\t-----------------------------");
 											
-											printf("\n\n\t\t\t\t\t\tID: %s", students[found4].student_id);
+											printf("\n\t\t\t\t\t\tID: %s", students[found4].student_id);
 											
-											printf("\n\n\t\t\t\t\t\tName: %s", students[found4].name);
+											printf("\n\t\t\t\t\t\tName: %s", students[found4].name);
 											
-											printf("\n\n\t\t\t\t\t\tEmail: %s", students[found4].email);
+											printf("\n\t\t\t\t\t\tEmail: %s", students[found4].email);
 											
-											printf("\n\n\t\t\t\t\t\tPhone: %s", students[found4].phone);
+											printf("\n\t\t\t\t\t\tPhone: %s", students[found4].phone);
 											
-											printf("\n\n\t\t\t\t\t\tGender: %s", (students[i].gender == 0) ? "Nam" : "Nu");
+											printf("\n\t\t\t\t\t\tGender: %s", (students[found4].gender == 0) ? "Nam" : "Nu");
 											
-											printf("\n\n\t\t\t\t\t\tTotal Number of Courses: %s", students[found4].phone);
+											printf("\n\t\t\t\t\t\tTotal Number of Courses: %s", students[found4].phone);
 											
-											printf("\n\n\t\t\t\t\t\tCourse 1 Code: %s", students[found4].phone);
+											printf("\n\t\t\t\t\t\tCourse 1 Code: %s", students[found4].phone);
 											
-											printf("\n\n\t\t\t\t\t\tCourse 1 Name: %s", students[found4].phone);
+											printf("\n\t\t\t\t\t\tCourse 1 Name: %s", students[found4].phone);
 											
 										}
 											
@@ -1240,7 +1265,7 @@ void manageStudents(Student students[], int *studentCount)
 											}	
 										}
 									
-										printf("\n\n\t\t\t\t\t\tStudents after descending arrangement: ");
+										printf("\n\t\t\t\t\t\tStudents after descending arrangement: ");
 									
 										displayListStudents(students, *studentCount);
 									
