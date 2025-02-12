@@ -31,8 +31,6 @@ int main(int argc, char *argv[])
 	
 	Class classes[MAX_CLASSES];
 	
-	//Admin admin[MAX_ACCOUNT];
-	
 	int studentCount = 0, classCount = 0;
 	
 	do
@@ -76,7 +74,6 @@ int main(int argc, char *argv[])
 							
 							c;
 							
-							adminMenu();
 							
 							n;
 							
