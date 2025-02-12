@@ -19,11 +19,26 @@
 #include "datatypes.h"
 
 
+void checkStringLength(const char *str, int maxLength) 
+{
+    if(strlen(str) >= maxLength) 
+	{ 
+        c;
+		
+		printf("\n\t\t\t\t\t\tError: String exceeds the allowed character limit, try again!");
+        
+        s;
+        
+        exit(0);         
+    }	
+}
+
+
 void showMainMenu()
 {
 	printf("\n\t\t\t\t\t        *** STUDENT MANAGEMENT SYSTEM USING C ***\n");
 		
-	printf("\n\t\t\t\t\t\t+========== CHOOSE YOUR ROLE: ==========+\n");
+	printf("\n\t\t\t\t\t\t+---------* CHOOSE YOUR ROLE: *---------+\n");
 		
 	printf("\t\t\t\t\t\t|%-39s|\n", "[1] Admin.");
 		
@@ -33,18 +48,43 @@ void showMainMenu()
 		
 	printf("\t\t\t\t\t\t|%-39s|\n", "[0] Exit the Program.");
 		
-	printf("\t\t\t\t\t\t+=======================================+");
+	printf("\t\t\t\t\t\t+---------------------------------------+");
 		
 	printf("\n");
 }
 	
 
 
+void showStudentMenu()	
+{
+	printf("\n\t\t\t\t\t      *** STUDENT MANAGEMENT SYSTEM USING C ***\n");
+		
+	printf("\n\t\t\t\t\t\t+----------- STUDENT MENU ----------+\n");
+		
+	printf("\t\t\t\t\t\t|%-35s|\n\t\t\t\t\t\t", "[1] Add A New Student.");
+		
+	printf("|%-35s|\n\t\t\t\t\t\t", "[2] Show All Students.");
+		
+	printf("|%-35s|\n\t\t\t\t\t\t", "[3] Search A Student.");
+		
+	printf("|%-35s|\n\t\t\t\t\t\t", "[4] Edit A Student.");
+		
+	printf("|%-35s|\n\t\t\t\t\t\t", "[5] Delete A Student.");
+	
+	printf("|%-35s|\n\t\t\t\t\t\t", "[6] Sort Students.");
+		
+	printf("|%-35s|\n\t\t\t\t\t\t", "[0] Exit The Program.");
+	
+	printf("+-----------------------------------+");
+}
+
+
+
 void adminMenu()
 {
 	printf("\n\t\t\t\t\t       *** STUDENT MANAGEMENT SYSTEM USING C ***\n");
-		
-	printf("\n\t\t\t\t\t\t+=============== MENU ===============+\n");
+	
+	printf("\n\t\t\t\t\t\t+--------------- MENU ---------------+\n");
 		
 	printf("\t\t\t\t\t\t|%-36s|\n\t\t\t\t\t\t", "[1] Students Management.");
 		
@@ -57,8 +97,8 @@ void adminMenu()
 	printf("|%-36s|\n\t\t\t\t\t\t", "[5] About Us.");
 		
 	printf("|%-36s|\n\t\t\t\t\t\t", "[0] Exit The Program.");
-		
-	printf("+====================================+");
+	
+	printf("+------------------------------------+");
 	
 	int adminMenuChoice;
 	
@@ -81,7 +121,11 @@ void adminMenu()
 				
 			case 1:
 				{
+					c;
 					
+					showStudentMenu();
+					
+					c;
 				}
 				
 			case 2:
@@ -111,47 +155,22 @@ void adminMenu()
 		}
 		
 }
-	
-
-
-void showStudentMenu()	
-{
-	printf("\n\t\t\t\t\t      *** STUDENT MANAGEMENT SYSTEM USING C ***\n");
 		
-	printf("\n\t\t\t\t\t\t+=========== STUDENT MENU ==========+\n");
-		
-	printf("\t\t\t\t\t\t|%-35s|\n\t\t\t\t\t\t", "[1] Add A New Student.");
-		
-	printf("|%-35s|\n\t\t\t\t\t\t", "[2] Show All Students.");
-		
-	printf("|%-35s|\n\t\t\t\t\t\t", "[3] Search A Student.");
-		
-	printf("|%-35s|\n\t\t\t\t\t\t", "[4] Edit A Student.");
-		
-	printf("|%-35s|\n\t\t\t\t\t\t", "[5] Delete A Student.");
-	
-	printf("|%-35s|\n\t\t\t\t\t\t", "[6] Sort Students.");
-		
-	printf("|%-35s|\n\t\t\t\t\t\t", "[0] Exit The Program.");
-		
-	printf("+===================================+");
-}
-	
 	
 	
 void loginMenu()
 {
 	printf("\n\t\t\t\t\t      *** STUDENT MANAGEMENT SYSTEM USING C ***");
 	
-	printf("\n\n\t\t\t\t\t\t\t\tLogin: ");
+	printf("\n\n\t\t\t\t\t\t\t\tLogin UI: ");
 	
-	printf("\n\n\t\t\t\t\t\t==================================");
+	printf("\n\n\t\t\t\t\t\t----------------------------------");
 	
 	printf("\n\n\t\t\t\t\t\tEmail:...........................");
 	
 	printf("\n\n\t\t\t\t\t\tPassword:........................");
 	
-	printf("\n\n\t\t\t\t\t\t==================================");
+	printf("\n\n\t\t\t\t\t\t----------------------------------");
 }
 	
 
@@ -240,9 +259,9 @@ void getPassword(char *password, int maxLength)
 
 void endProgram()
 {
-	printf("\n\t\t\t\t\t\t========== THANK YOU ==========");
+	printf("\n\t\t\t\t\t\t+---------- THANK YOU ----------+");
 	
-	printf("\n\t\t\t\t\t\t======== SEE YOU SOON ========+");
+	printf("\n\t\t\t\t\t\t+------- SEE YOU SOON ----------+");
 }
 
 
@@ -253,7 +272,7 @@ void goBackOrExit()
 	
 	do
 	{
-		printf("\n\n\t\t\t\t\t\tGo back (b) or Exit (e): ");
+		printf("\n\n\t\t\t\t\t\t-> Go back (b) or Exit (e): ");
 	
 		scanf(" %c", &choice);
 	
@@ -336,6 +355,7 @@ void saveAccountAdmin()
 }
 
 
+
 void checkAccountAdmin() 
 {
     Admin adminFromFile, adminInput;
@@ -408,66 +428,94 @@ void exit()
 }
 
 	
-
+		
 void addStudent(Student students[], int *studentCount, char id0[])
-{		
-	c;
-		
+{
+    c;
+    
 	f;
-		
-	strcpy(students[*studentCount].student_id, id0);
-		
-	printf("\n\t\t\t\t\t\t-> Enter student name: ");
-		
-	fgets(students[*studentCount].name, sizeof(students[*studentCount].name), stdin);
-		
-	students[*studentCount].name[strcspn(students[*studentCount].name, "\n")] = '\0';
-		
-	printf("\n\t\t\t\t\t\t-> Enter student phone number: ");
-		
-	fgets(students[*studentCount].phone, sizeof(students[*studentCount].phone), stdin);
-		
-	students[*studentCount].phone[strcspn(students[*studentCount].phone, "\n")] = '\0';
-		
-	printf("\n\t\t\t\t\t\t-> Enter student email: ");
-		
-	f;
-		
-	fgets(students[*studentCount].email, sizeof(students[*studentCount].email), stdin);
-		
-	students[*studentCount].email[strcspn(students[*studentCount].email, "\n")] = '\0';
-		
-	int tempGender;
-		
+
+    Student newStudent;
+
+    strcpy(newStudent.student_id, id0);
+
+    printf("\n\t\t\t\t\t\t-> Enter student name (max 24 characters): ");
+    
+	scanf(" %[^\n]s", newStudent.name);
+    
+	checkStringLength(newStudent.name, 24);
+
+    printf("\n\t\t\t\t\t\t-> Enter student phone number (max 19 characters): ");
+    
+	scanf(" %[^\n]s", newStudent.phone);
+    
+	checkStringLength(newStudent.phone, 19);
+
+    printf("\n\t\t\t\t\t\t-> Enter student email (max 29 characters): ");
+    
+	scanf(" %[^\n]s", newStudent.email);
+    
+	checkStringLength(newStudent.email, 29);
+
+    int tempGender;
+    
 	do
-		{
-			printf("\n\t\t\t\t\t\t-> Enter student gender ( 0: Male, 1: Female ): ");
-				
-			scanf("%d", &tempGender);
-		}
-			
-	while(tempGender != 0 && tempGender != 1);
-			
-	students[*studentCount].gender = (tempGender == 0) ? 0 : 1;
-				
+    {
+        printf("\n\t\t\t\t\t\t-> Enter student gender (0: Male, 1: Female): ");
+        
+		scanf("%d", &tempGender);
+    } 
+	
+	while (tempGender != 0 && tempGender != 1);
+    
+	newStudent.gender = tempGender;
+
+    for (int i = 0; i < *studentCount; i++)
+    {
+        if (strcmp(students[i].name, newStudent.name) == 0)
+        {
+            printf("\n\t\t\t\t\t\tError: Name '%s' already exists!\n", newStudent.name);
+        	
+			return;
+        }
+
+        if (strcmp(students[i].phone, newStudent.phone) == 0)
+        {
+            printf("\n\t\t\t\t\t\tError: Phone number '%s' already exists!\n", newStudent.phone);
+            
+			return;
+        }
+
+        if (strcmp(students[i].email, newStudent.email) == 0)
+        {
+            printf("\n\t\t\t\t\t\tError: Email '%s' already exists!\n", newStudent.email);
+            
+			return;
+        }
+    }
+
+    students[*studentCount] = newStudent;
+    
 	(*studentCount)++;
-	
+
 }
+
 	
 	
+
 void displayListStudents(Student students[], int studentCount)
 {		
 	c;
 		
-	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t*** All students: ***\n\n");	
+	printf("\n\t\t\t\t\t\t\t\t\t\t\t\t*  All students:  *\n\n");
+	
+	printf("\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+");	
+			
+	printf("\n\t\t\t\t\t\t|%-6s|%-21s|%-30s|%-20s|%-20s|%-15s|\n","  ID","         Name","             Email","         Phone","        Gender","  NO.Course ");	
 		
 	for(int i = 0; i < studentCount; i++)		 
-	{												
-		printf("\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+");	
-			
-		printf("\n\t\t\t\t\t\t|%-6s|%-21s|%-30s|%-20s|%-20s|%-15s|\n","  ID","         Name","             Email","         Phone","        Gender"," NO.Course ");
-			
-		printf("\t\t\t\t\t\t%-26s|%-30s|%-20s|%-20s|%-15s|\n","|------|---------------------","------------------------------","--------------------","--------------------","------------","------------------");
+	{															
+		printf("\t\t\t\t\t\t%-26s|%-30s|%-20s|%-20s|%-15s|\n","+------|---------------------","------------------------------","--------------------","--------------------","---------------");
 						
 		printf("\t\t\t\t\t\t|%-6s|%-21s|%-30s|%-20s|%-20s|%-15s|\n", students[i].student_id, students[i].name, students[i].email, students[i].phone, (students[i].gender == 0) ? "Nam" : "Nu", "1");
 																		
@@ -477,33 +525,39 @@ void displayListStudents(Student students[], int studentCount)
 }
 
 
+
 void searchStudentsByName(Student students[], int studentCount, const char* name)
 {
-	int found = 0;
-	
-	printf("\n\t\t\t\t\t\tList students found: \n");
-	
-	for(int i = 0; i < studentCount; i++)
-	{
-		if(strstr(students[i].name, name) != NULL)
-		{								
-			printf("\n\t\t\t\t\t\t+-----------------------------------------------------------------------------------+");	
+    int found = 0;
+
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t\t* List of students name '%s': *", name);
+  
+    printf("\n\n\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+\n");
+    
+	printf("\t\t\t\t\t\t|%-6s|%-21s|%-30s|%-20s|%-20s|%-15s|\n", "  ID", "         Name", "             Email", "         Phone", "        Gender", "  NO.Course ");
+    
+	printf("\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+\n");
+ 
+    for(int i = 0; i < studentCount; i++)
+    {
+        if(strstr(students[i].name, name) != NULL)
+        {
+            printf("\t\t\t\t\t\t|%-6s|%-21s|%-30s|%-20s|%-20s|%-15s|\n", students[i].student_id, students[i].name, students[i].email, students[i].phone, (students[i].gender == 0) ? "Nam" : "Nu", "1");
+
+            printf("\t\t\t\t\t\t+------+---------------------+------------------------------+--------------------+--------------------+---------------+\n");
 			
-			printf("\n\t\t\t\t\t\t|Student code: %s | Name: %s, Email: %s | Phone: %s | Gender: %s | NO.Course: %s|", students[i].student_id, students[i].name, students[i].email, students[i].phone, (students[i].gender == 0) ? "Nam" : "Nu", "1");
-			
-			printf("\n\t\t\t\t\t\t+-----------------------------------------------------------------------------------+");
-			
-			found = 1;						
-		}		
-	}
-	
-	if(found != 1)
-	{
-		c;
+			found = 1;
+        }
+    }
+   
+    if(found != 1)
+    {
+        c;
 		
 		printf("\n\n\t\t\t\t\t\tError: No students found with the name '%s'!\n", name);
-	}
+    }
 }
+
 	
 /*	
 void addClass(Class classes[], int *classCount)
@@ -835,6 +889,8 @@ void manageStudents(Student students[], int *studentCount)
 									c;
 										
 									printf("\n\t\t\t\t\t\tError: There are currently no students on the list!");
+									
+									s;
 										
 									exit();
 								}
@@ -862,9 +918,15 @@ void manageStudents(Student students[], int *studentCount)
 								
 								f;
 								
-								fgets(id0, sizeof(id0), stdin);
+								scanf("%9s", id0);
 								
-								id0[strcspn(id0, "\n")] = '\0';
+								checkStringLength(id0, sizeof(id0));								
+								
+								c;
+								
+								printf("\n\n\t\t\t\t\t\t");
+								
+								p;												
 								
 								for(int t = 0; t < (*studentCount); t++)
 								{
@@ -881,7 +943,7 @@ void manageStudents(Student students[], int *studentCount)
 								}																
 									
 									if(found0 == -1)
-									{																																											
+									{																																																																																			
 										addStudent(students, studentCount, id0);
 											
 										c;
@@ -1062,7 +1124,7 @@ void manageStudents(Student students[], int *studentCount)
 											
 											printf("\n\n\t\t\t\t\t\tStudent informations: ");
 											
-											printf("\n\n\t\t\t\t\t\t-------------------------");
+											printf("\n\n\t\t\t\t\t\t-----------------------------");
 											
 											printf("\n\n\t\t\t\t\t\tID: %s", students[found4].student_id);
 											
@@ -1071,6 +1133,8 @@ void manageStudents(Student students[], int *studentCount)
 											printf("\n\n\t\t\t\t\t\tEmail: %s", students[found4].email);
 											
 											printf("\n\n\t\t\t\t\t\tPhone: %s", students[found4].phone);
+											
+											printf("\n\n\t\t\t\t\t\tGender: %s", (students[i].gender == 0) ? "Nam" : "Nu");
 											
 											printf("\n\n\t\t\t\t\t\tTotal Number of Courses: %s", students[found4].phone);
 											
@@ -1145,13 +1209,13 @@ void manageStudents(Student students[], int *studentCount)
 								
 								do
 								{																
-									printf("\n\t\t\t\t\t\t+============ SORT MENU ===========+\n");
+									printf("\n\t\t\t\t\t\t+------------* SORT MENU *-------------+\n");
 		
-									printf("\t\t\t\t\t\t|%-35s|\n\t\t\t\t\t\t", "[1] Sort students by name Descending.");
+									printf("\t\t\t\t\t\t|%-38s|\n\t\t\t\t\t\t", "[1] Sort students by name Descending.");
 		
-									printf("|%-35s|\n\t\t\t\t\t\t", "[2] Sort students by name Asscending.");
+									printf("|%-38s|\n\t\t\t\t\t\t", "[2] Sort students by name Ascending.");
 
-									printf("+=====================================+");
+									printf("+--------------------------------------+");
 								
 									printf("\n\n\t\t\t\t\t\t-> Enter your choice: ");
 								
@@ -1200,7 +1264,7 @@ void manageStudents(Student students[], int *studentCount)
 												}	
 											}
 										
-											printf("\n\n\t\t\t\t\t\tStudents after asscending arrangement: ");
+											printf("\n\n\t\t\t\t\t\tStudents after ascending arrangement: ");
 									
 											displayListStudents(students, *studentCount);
 									
