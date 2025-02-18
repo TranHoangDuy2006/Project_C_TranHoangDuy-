@@ -4,6 +4,12 @@
 
 #include "function.h"
 
+#include "student.h"
+
+#include "class.h"
+
+#include "teacher.h"
+
 #include <windows.h>
 
 #define MAX_STUDENTS 50
@@ -35,6 +41,10 @@ int main(int argc, char *argv[])
 	Teacher teachers[MAX_TEACHERS];
 	
 	Admin admin;
+	
+	User user;
+	
+	Teacher teacher;
 	
 	int studentCount = 0, classCount = 0, teacherCount = 0;
 	
@@ -80,6 +90,8 @@ int main(int argc, char *argv[])
 						{
 							c;
 							
+							checkAccountUser(students, &studentCount, classes, &classCount, &user);
+							
 							manageStudents(students, &studentCount);
 							
 							n;
@@ -93,8 +105,14 @@ int main(int argc, char *argv[])
 					case 3:
 						{
 							c;
-
 							
+							checkAccountTeacher(students, &studentCount, classes, &classCount, &teacher);
+
+							manageTeachers(teachers, &teacherCount);
+							
+							n;
+							
+							p;
 							
 							b;							
 						}

@@ -1,66 +1,50 @@
+#include <stdio.h>
+
+#include <string.h>
+
+#include <stdlib.h>
+
+#include <windows.h>
+
+#include <conio.h> // getch library
+
+#define c system("cls")
+
+#define p system("pause")
+
+#define f fflush(stdin)
+
+#define s Sleep(2000)
+
 #include "datatypes.h"
 
 
-void showMainMenu();
+void showMainMenu(); // Hien thi menu chinh
 
-void showTeacherMenu();
+void adminMenu(Student students[], int *studentCount, Class classes[], int *classCount, Admin *admin, Teacher teachers[], int *teacherCount); // Quan li menu admin
 
-void adminMenu(Student students[], int *studentCount, Class classes[], int *classCount, Admin *admin, Teacher teachers[], int *teacherCount);
+void loginAdminMenu(); // Hien thi menu dang nhap admin
 
-void loginMenu();
+void loginUserMenu(); // Hien thi menu dang nhap user
 
-void checkAccountAdmin(Student students[], int *studentCount, Class classes[], int *classCount, Admin *admin);
+void checkAccountAdmin(Student students[], int *studentCount, Class classes[], int *classCount, Admin *admin); // Kiem tra dang nhap cho admin
 
-//void saveAccountAdmin();
+void checkAccountUser(Student students[], int *studentCount, Class classes[], int *classCount, User *user); // Kiem tra dang nhap cho user
 
-int loadTeachers(Teacher teachers[], int *teacherCount);
+void checkAccountTeacher(Student students[], int *studentCount, Class classes[], int *classCount, Teacher *teacher); // Kiem tra dang nhap cho teacher
 
-void saveTeachers(Teacher teachers[], int teacherCount);
+//void saveAccount(); // Luu tai khoan nguoi dung
 
-void inputString(char *str, int maxLength, const char *prompt); 
+void encryptPassword(char *password, int maxLength); // Ma hoa mat khau dang nhap
 
-void encryptPassword(char *password, int maxLength);
+void userAndPassword(Admin *admin); // Quan li dang nhap tai khoan admin
 
-void showStudentMenu();
+void userAndPassword1(User *user); // Quan li dang nhap tai khoan user
+
+//void addStudentToClass(); Them sinh vien vao lop hoc
+
+void showClassMenu(); // Hien thi menu lop hoc
 
 void exit();
-
-void userAndPassword(Admin *admin);
-
-int loadClasses(Class classes[], int *classCount);
-
-void saveClasses(Class classes[], int classCount);
-
-void displayListTeachers();
-
-int loadStudents(Student students[], int *studentCount);
-
-void saveStudents(Student students[], int studentCount);
-
-void goBackOrExit();
-
-void endProgram();
-
-void addTeacher(Teacher teachers[], int *teacherCount, char id12[]);
-
-void searchTeachersByName(Teacher teachers[], int teacherCount, const char* name1);
-
-//void addStudentToClass();
-
-void checkStringLength(const char *str, int maxLength);
-
-void addStudent(Student students[], int *studentCount, char id0[]);
-
-void displayListStudents();
-
-void addClass(Class classes[], int *classCount, char id7[]);
-
-void displayListClasses();
-
-void manageClasses(Class classes[], int *classCount);
-
-void manageStudents(Student students[], int *studentCount);
-
-void showClassMenu();
 
 

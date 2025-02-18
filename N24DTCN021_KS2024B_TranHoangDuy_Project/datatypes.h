@@ -1,3 +1,7 @@
+#ifndef DATATYPES_H  
+
+#define DATATYPES_H
+
 #include <stdbool.h>
 
 
@@ -23,7 +27,7 @@ typedef struct
 		
 	char phone[20];
 		
-	char email[30];
+	char gmail[30];
 	
 } Student;
 	
@@ -59,6 +63,10 @@ typedef struct
 	
 	char phone[20];
 	
+	char userName[20];
+	
+	char password[10];
+	
 	Class classes[];
 
 } Teacher;
@@ -71,3 +79,16 @@ typedef struct
 	char password[10];
 
 } Admin;
+
+
+typedef struct
+{
+	char userName[20];
+	
+	char password[10];
+
+} User;
+
+
+#endif
+
