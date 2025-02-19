@@ -702,7 +702,9 @@ void manageStudents(Student students[], int *studentCount)
 													students[j + 1] = temp;
 												}
 											}	
-										}									
+										}
+
+										saveStudents(students, studentCount);
 									
 										displayListStudents();
 										
@@ -724,7 +726,9 @@ void manageStudents(Student students[], int *studentCount)
 														students[b + 1] = temp;
 													}
 												}	
-											}										
+											}
+
+											saveStudents(students, studentCount);
 									
 											displayListStudents();
 											
@@ -735,8 +739,6 @@ void manageStudents(Student students[], int *studentCount)
 												{
 													printf("\033[31m\n\n\t\t\t\t\t\t[x] Warning: Invalid choice, try again!\033[0m");																										
 												}
-												
-									saveStudents(students, studentCount);
 									
 									goBackOrExit();
 										
