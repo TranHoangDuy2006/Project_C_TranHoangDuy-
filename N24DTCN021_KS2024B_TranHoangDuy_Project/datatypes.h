@@ -2,8 +2,6 @@
 
 #define DATATYPES_H
 
-#include <stdbool.h>
-
 
 typedef struct
 {

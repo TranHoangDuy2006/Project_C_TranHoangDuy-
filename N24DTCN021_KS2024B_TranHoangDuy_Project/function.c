@@ -4,6 +4,8 @@
 
 #include <stdlib.h>
 
+#include <stdbool.h>
+
 #include <windows.h>
 
 #include <conio.h> // getch library
@@ -15,8 +17,6 @@
 #define f fflush(stdin)
 
 #define s Sleep(2000)
-
-#define MAX_STUDENTS 50
 
 #include "class.h"
 
@@ -135,114 +135,7 @@ void goBackOrExit()
 /*
 void addStudentToClass()
 {
-    FILE *fs = fopen("studentData.bin", "rb");
     
-	if(fs == NULL)
-    {
-        printf("\033[31m\n\t\t\t\t\t\t[x] Error: Cannot open 'studentData.bin'!\033[0m\n");
-        
-		exit(0);
-    }
-
-    Student students[50];
-    
-	int studentCount = 0;
-
-    while(fread(&students[studentCount], sizeof(Student), 1, fs))
-    {
-        studentCount++;
-    }
-    
-	fclose(fs);
-
-    FILE *fc = fopen("classData.bin", "rb");
-    
-	if(fc == NULL)
-    {
-        printf("\033[31m\n\t\t\t\t\t\t[x] Error: Cannot open 'classData.bin'!\033[0m\n");
-        
-		exit(0);
-    }
-
-    Class classes[20];
-    
-	int classCount = 0;
-
-    while(fread(&classes[classCount], sizeof(Class), 1, fc))
-    {
-        classCount++;
-    }
-    
-	fclose(fc);
-
-    char id10[10], id11[10];
-    
-    inputString(id10, 9, "Enter student code");
-    
-	Student *foundStudent = NULL;
-
-    for (int i = 0; i < studentCount; i++)
-    {
-        if (strcmp(students[i].student_id, id10) == 0)
-        {
-            foundStudent = &students[i];
-            
-			break;
-        }
-    }
-
-    if(foundStudent == NULL)
-    {
-        printf("\033[31m\n\t\t\t\t\t\t[x] Student code '%s' not found!\033[0m\n", id10);
-        
-		exit(0);
-    }
-
-    inputString(id11, 9, "Enter class code");
-    
-	Class *foundClass = NULL;
-
-    for(int j = 0; j < classCount; j++)
-    {
-        if(strcmp(classes[j].class_id, id11) == 0)
-        {
-            foundClass = &classes[j];
-            
-			break;
-        }
-    }
-
-    if(foundClass == NULL)
-    {
-        printf("\033[31m\n\t\t\t\t\t\t[x] Class code '%s' not found!\033[0m\n", id11);
-        
-		exit(0);
-    }
-
-    foundClass->students[foundClass->studentCount] = *foundStudent;
-    
-	foundClass->studentCount++;
-	
-	c;
-
-    printf("\033[32m\n\t\t\t\t\t\t[*] Student '%s' added to class '%s' successfully!\033[0m\n", id10, id11);
-    
-    s;
-
-    fc = fopen("classData.bin", "wb");
-    
-	if(fc == NULL)
-    {
-        printf("\033[31m\n\t\t\t\t\t\t[x] Error: Cannot update 'classData.bin'!\033[0m\n");
-        
-		exit(0);
-    }
-
-    fwrite(classes, sizeof(Class), classCount, fc);
-    
-	fclose(fc);
-	
-	c;
 }
 */
 
@@ -250,37 +143,37 @@ void addStudentToClass()
 
 void encryptPassword(char *password, int maxLength) 
 {
-    int i = 0;
+    int i = 0; // Dem so ki tu nhap vao mang password
     
-	char ch;
+	char ch; // Bien luu tung ki tu ma nguoi dung nhap vao
     
     while(1) 
 	{
-        ch = getch(); 
+        ch = getch(); // Doc ki tu tu ban phim nhung khong hien thi
 
-        if(ch == '\r') 
+        if(ch == '\r')  // Neu nhan Enter ( ki tu "Carriage Return" ) thi:
 		{ 
-            password[i] = '\0';
+            password[i] = '\0'; // Them ki tu ket thuc chuoi ( Null ) vao cuoi mang password
             
-			printf("\n"); 
+			printf("\n"); // Xuong dong de chuyen sang dong tiep theo
             
 			break;
         }
   
-        else if(ch == 8 && i > 0) 
+        else if(ch == 8 && i > 0) // Ki tu backspace va i > 0 de xac nhan co ki tu de xoa
 		{ 
-            printf("\b \b"); 
+            printf("\b \b"); // Di chuyen con tro ve ben trai 1 vi tri, in ra khoang trong de xoa ki tu * truoc do, di chuyen con tro ve ben trai them 1 lan nua ( tro lai vi tri truoc khi nhap ki tu ) 
             
-			i--;
+			i--; // Giam i di 1 de xoa ki tu cuoi cung ra khoi mang password
         }
    
-        else if(i < maxLength - 1 && ch >= 32 && ch <= 126) 
+        else if(i < maxLength - 1 && ch >= 32 && ch <= 126) // Dam bao khong vuot qua so ki tu cho phep va chi in duoc cac ki tu co the in ( ngoai tru esc, tab,... )
 		{ 
-            password[i] = ch;
+            password[i] = ch; // Luu ki tu vao password
             
-			i++;
+			i++; // Tang i de luu ki tu tiep theo
             
-			printf("*"); 
+			printf("*"); // In dau sao de ma hoa ki tu nhap vao
         }
     }
 }

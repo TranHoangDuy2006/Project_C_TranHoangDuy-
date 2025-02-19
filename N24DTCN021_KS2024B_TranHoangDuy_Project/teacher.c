@@ -6,6 +6,8 @@
 
 #include <windows.h>
 
+#include <stdbool.h>
+
 #include <conio.h> // getch library
 
 #define c system("cls")
@@ -190,6 +192,8 @@ void addTeacher(Teacher teachers[], int *teacherCount, char id12[])
 		printf("\n\t\t\t\t\t\t-> Enter teacher gender ( 0: Male, 1: Female ): ");
         
 		scanf("%d", &newTeacher.gender);
+		
+		f;
     } 
 	
 	while(newTeacher.gender != 0 && newTeacher.gender != 1);
@@ -201,6 +205,8 @@ void addTeacher(Teacher teachers[], int *teacherCount, char id12[])
 		printf("\n\t\t\t\t\t\t-> Enter teacher date of birth ( dd mm yyyy ): ");
         
 		scanf("%d %d %d", &newTeacher.dateOfBirth.day, &newTeacher.dateOfBirth.month, &newTeacher.dateOfBirth.year);
+		
+		f;
 
         if(newTeacher.dateOfBirth.day < 1 || newTeacher.dateOfBirth.day > 31 || newTeacher.dateOfBirth.month < 1 || newTeacher.dateOfBirth.month > 12 || newTeacher.dateOfBirth.year < 1000 || newTeacher.dateOfBirth.year > 3000) 
         {
@@ -246,7 +252,7 @@ void searchTeachersByName(Teacher teachers[], int teacherCount, const char* name
 {
     int found1 = 0;
 
-    printf("\n\t\t\t\t\t\t\t\t\t\t\t*  LIST OF TEACHERS HAVE NAME '%s':  *", name1);
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t\033[1m*  LIST OF TEACHERS HAVE NAME '%s':  *\033[0m", name1);
   
     printf("\n\n\t\t\t\t\t\t+------+----------------------+------------------------------+--------------------+----------------+---------+--------------+\n");
     
@@ -388,7 +394,7 @@ void manageTeachers(Teacher teachers[], int *teacherCount)
     							
 								int teacherCount = loadTeachers(teachers, &teacherCount);
 								
-								printf("\n\t\t\t\t\t\t\t\t*  UPDATE THE NEW TEACHER:  *");						
+								printf("\n\t\t\t\t\t\t\t\t\033[1m*  UPDATE THE NEW TEACHER:  *\033[0m");						
 								
 								inputString(id13, 9, "Enter teacher code you want to edit");							
 								
@@ -424,7 +430,7 @@ void manageTeachers(Teacher teachers[], int *teacherCount)
 											
 											c;
 											
-											printf("\n\t\t\t\t\t\t\t\t\t\t\t*  TEACHER CODE '%s' INFORMATION:  *", id13);
+											printf("\n\t\t\t\t\t\t\t\t\t\t\t\033[1m*  TEACHER CODE '%s' INFORMATION:  *\033[0m", id13);
   
     										printf("\n\n\t\t\t\t\t\t+------+----------------------+------------------------------+--------------------+----------------+---------+--------------+\n");
     
@@ -535,7 +541,7 @@ void manageTeachers(Teacher teachers[], int *teacherCount)
         							
 								int teacherCount = loadTeachers(teachers, &teacherCount);
 								
-								printf("\n\t\t\t\t\t\t\t\t*  DELETE A TEACHER:  *");
+								printf("\n\t\t\t\t\t\t\t\t\033[1m*  DELETE A TEACHER:  *\033[0m");
 								
 								inputString(id14, 9, "Enter teacher code you want to delete");
 
@@ -555,8 +561,10 @@ void manageTeachers(Teacher teachers[], int *teacherCount)
 									c;
 									
 									printf("\033[31m\n\t\t\t\t\t\t[x] Warning: Teacher code '%s 'not found!\033[0m", id14);
+									
+									s;
 										
-									exit();																				
+									exit(0);																				
 								}
 									
 									else
@@ -569,7 +577,7 @@ void manageTeachers(Teacher teachers[], int *teacherCount)
 											
 											c;																				
 											
-											printf("\n\t\t\t\t\t\t\t\t\t\t\t*  TEACHER CODE '%s' INFORMATION:  *", id14);
+											printf("\n\t\t\t\t\t\t\t\t\t\t\t\033[1m*  TEACHER CODE '%s' INFORMATION:  *\033[0m", id14);
   
     										printf("\n\n\t\t\t\t\t\t+------+----------------------+------------------------------+--------------------+----------------+---------+--------------+\n");
     

@@ -394,7 +394,7 @@ void manageStudents(Student students[], int *studentCount)
     							
 								int studentCount = loadStudents(students, &studentCount);
 								
-								printf("\n\t\t\t\t\t\t\t\t*  UPDATE THE NEW STUDENT:  *");						
+								printf("\n\t\t\t\t\t\t\t\t\033[1m*  UPDATE THE NEW STUDENT:  *\033[0m");						
 								
 								inputString(id2, 9, "Enter student code you want to edit");							
 								
@@ -430,7 +430,7 @@ void manageStudents(Student students[], int *studentCount)
 											
 											c;
 											
-											printf("\n\t\t\t\t\t\t\t\t\t\t\t*  STUDENT CODE '%s' INFORMATION:  *", id2);
+											printf("\n\t\t\t\t\t\t\t\t\t\t\t\033[1m*  STUDENT CODE '%s' INFORMATION:  *\033[0m", id2);
   
     										printf("\n\n\t\t\t\t\t\t+------+----------------------+------------------------------+--------------------+----------------+---------+--------------+\n");
     
@@ -539,7 +539,7 @@ void manageStudents(Student students[], int *studentCount)
         							
 								int studentCount = loadStudents(students, &studentCount);
 								
-								printf("\n\t\t\t\t\t\t\t\t*  DELETE A STUDENT:  *");
+								printf("\n\t\t\t\t\t\t\t\t\033[1m*  DELETE A STUDENT:  *\033[0m");
 								
 								inputString(id4, 9, "Enter student code you want to delete");
 
@@ -573,7 +573,7 @@ void manageStudents(Student students[], int *studentCount)
 											
 											c;																				
 											
-											printf("\n\t\t\t\t\t\t\t\t\t\t\t*  STUDENT CODE '%s' INFORMATION:  *", id4);
+											printf("\n\t\t\t\t\t\t\t\t\t\t\t\033[1m*  STUDENT CODE '%s' INFORMATION:  *\033[0m", id4);
   
     										printf("\n\n\t\t\t\t\t\t+------+----------------------+------------------------------+--------------------+----------------+---------+--------------+\n");
     
@@ -654,7 +654,7 @@ void manageStudents(Student students[], int *studentCount)
 								
 								do
 								{																
-									printf("\n\t\t\t\t\t\t+------------| SORT MENU |-------------+\n");
+									printf("\n\t\t\t\t\t\t+------------|\033[1m SORT MENU\033[0m |-------------+\n");
 		
 									printf("\t\t\t\t\t\t|%-38s|\n\t\t\t\t\t\t", "[1] Sort Students By Name Ascending.");
 		

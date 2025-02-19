@@ -6,6 +6,8 @@
 
 #include <windows.h>
 
+#include <stdbool.h>
+
 #include <conio.h> // getch library
 
 #define c system("cls")
@@ -369,7 +371,7 @@ void manageClasses(Class classes[], int *classCount, Student students[], int stu
 											
 											c;
 											
-											printf("\n\t\t\t\t\t\t\t\t *  CLASS CODE '%s' INFORMATION:  *\n\n", id8);
+											printf("\n\t\t\t\t\t\t\t\t\033[1m *  CLASS CODE '%s' INFORMATION:  *\033[0m\n\n", id8);
     
 											printf("\t\t\t\t\t\t+------+----------------------+------------------------------+\n");
     
@@ -449,7 +451,7 @@ void manageClasses(Class classes[], int *classCount, Student students[], int stu
 											
 											c;
 											
-											printf("\n\t\t\t\t\t\t\t\t *  CLASS CODE '%s' INFORMATION:  *\n\n", id9);
+											printf("\n\t\t\t\t\t\t\t\t\033[1m *  CLASS CODE '%s' INFORMATION:  *\033[0m\n\n", id9);
     
 											printf("\t\t\t\t\t\t+------+----------------------+------------------------------+\n");
     
